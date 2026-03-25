@@ -1,4 +1,4 @@
-vless://0c463591-2f7b-424d-98db-89b63a655f64@admin.silentiumroom.shop:443?type=tcp&encryption=none&security=reality&pbk=-3tn3F4XSJUb2wuVc69XemKfQ_YF5lEay9dSrXe96CU&fp=chrome&sni=www.microsoft.com&sid=90d591914148&spx=%2F#admin-Artem
+
 vless://b941ed06-2a44-4af6-88c6-c64c7743774e@217.16.30.20:443?type=tcp&security=reality&pbk=k3xIMnx--dXIDZMM-gGoUtM0c8N-C6W8VbbkbinoCCE&fp=chrome&sni=eh.vk.ru&sid=019a&spx=%2F&flow=xtls-rprx-vision#%D0%A8%D0%B2%D0%B5%D0%B9%D1%86%D0%B0%D1%80%D0%B8%D1%8F%F0%9F%87%A8%F0%9F%87%AD%F0%9F%9F%A2LTE%F0%9F%86%95
 vless://b941ed06-2a44-4af6-88c6-c64c7743774e@217.16.30.20:443?type=tcp&security=reality&pbk=k3xIMnx--dXIDZMM-gGoUtM0c8N-C6W8VbbkbinoCCE&fp=chrome&sni=max.ru&sid=019a&spx=%2F&flow=xtls-rprx-vision#%D0%A8%D0%B2%D0%B5%D0%B9%D1%86%D0%B0%D1%80%D0%B8%D1%8F%F0%9F%87%A8%F0%9F%87%AD%F0%9F%9F%A2LTE%F0%9F%86%95 %E2%84%962
 vless://5103fc7d-3758-4461-8f7b-a379372baa04@83.166.253.115:443?type=tcp&security=reality&pbk=B-F57a2D9jHiF2QTXlQT0ybPIETrmZhj969P1Y1L1HU&fp=chrome&sni=eh.vk.ru&sid=9b54&spx=%2F&flow=xtls-rprx-vision#%D0%92%D0%B5%D0%BD%D0%B3%D1%80%D0%B8%D1%8F%F0%9F%87%AD%F0%9F%87%BA%F0%9F%9F%A2LTE
