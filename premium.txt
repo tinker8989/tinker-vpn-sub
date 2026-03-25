@@ -1,0 +1,1 @@
+vless://0c463591-2f7b-424d-98db-89b63a655f64@admin.silentiumroom.shop:443?type=tcp&encryption=none&security=reality&pbk=-3tn3F4XSJUb2wuVc69XemKfQ_YF5lEay9dSrXe96CU&fp=chrome&sni=www.microsoft.com&sid=90d591914148&spx=%2F#admin-Artem
