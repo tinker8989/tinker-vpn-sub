@@ -1,1 +1,0 @@
-# tinker-vpn-sub
