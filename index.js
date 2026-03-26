@@ -13,45 +13,103 @@ const STANDARD_FILE = path.join(__dirname, "standard.txt");
 const PREMIUM_FILE = path.join(__dirname, "premium.txt");
 const FAMILY_FILE = path.join(__dirname, "family.txt");
 
+const TG_URL = "https://t.me/tinkervpn";
+const UPDATE_INTERVAL_HOURS = 1;
+const UPDATE_INTERVAL_SECONDS = UPDATE_INTERVAL_HOURS * 3600;
+
+function cleanText(text) {
+  return String(text || "").replace(/^\uFEFF/, "").trim();
+}
+
 function setHeaders(res, title) {
-  const expire = Math.floor(new Date("2390-09-02T00:00:00Z").getTime() / 1000);
-
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
+
+  // Название подписки
   res.setHeader("Profile-Title", title);
-  res.setHeader("Profile-Update-Interval", "1");
-  res.setHeader("Subscription-Userinfo", `upload=0; download=0; total=0; expire=${expire}`);
-  res.setHeader("Profile-Web-Page-URL", "https://t.me/tinker_vpn");
+  res.setHeader("X-Profile-Title", title);
+
+  // Автообновление раз в час
+  res.setHeader("Profile-Update-Interval", String(UPDATE_INTERVAL_HOURS));
+  res.setHeader("X-Profile-Update-Interval", String(UPDATE_INTERVAL_HOURS));
+
+  // Ссылка/кнопка с инфой и телеграмом
+  res.setHeader("Profile-Web-Page-URL", TG_URL);
+  res.setHeader("X-Profile-Web-Page-URL", TG_URL);
+  res.setHeader("Support-URL", TG_URL);
+  res.setHeader("X-Support-URL", TG_URL);
+
+  // Без срока окончания подписки
+  res.setHeader(
+    "Subscription-Userinfo",
+    "upload=0; download=0; total=1099511627776"
+  );
+  res.setHeader(
+    "X-Subscription-Userinfo",
+    "upload=0; download=0; total=1099511627776"
+  );
+
+  // Для части клиентов полезно
+  res.setHeader("Cache-Control", `public, max-age=${UPDATE_INTERVAL_SECONDS}`);
 }
 
-function sendFile(res, filePath, title) {
-  if (!fs.existsSync(filePath)) {
-    return res.status(404).send("Not found");
+function sendSubscription(res, filePath, title) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).send("Subscription file not found");
+    }
+
+    let data = fs.readFileSync(filePath, "utf-8");
+    data = cleanText(data);
+
+    if (!data) {
+      return res.status(500).send("Subscription file is empty");
+    }
+
+    setHeaders(res, title);
+    return res.status(200).send(data);
+  } catch (e) {
+    console.error("Send subscription error:", e);
+    return res.status(500).send("Internal server error");
   }
-
-  setHeaders(res, title);
-
-  const data = fs.readFileSync(filePath, "utf-8");
-  res.send(data);
 }
 
-// проверка
+// Главная
 app.get("/", (req, res) => {
-  res.send("Tinker VPN server working 🚀");
+  res.status(200).send("Tinker VPN subscription server is working");
 });
 
-// подписки
+// Нормализация двойных слешей
+app.use((req, res, next) => {
+  if (req.path.includes("//")) {
+    const normalized = req.path.replace(/\/{2,}/g, "/");
+    return res.redirect(301, normalized);
+  }
+  next();
+});
+
+// Подписки
 app.get("/standard", (req, res) => {
-  sendFile(res, STANDARD_FILE, "Tinker VPN Standart");
+  sendSubscription(res, STANDARD_FILE, "Tinker VPN Standard");
+});
+
+// Алиас если где-то осталось старое написание
+app.get("/standart", (req, res) => {
+  sendSubscription(res, STANDARD_FILE, "Tinker VPN Standard");
 });
 
 app.get("/premium", (req, res) => {
-  sendFile(res, PREMIUM_FILE, "Tinker VPN Premium");
+  sendSubscription(res, PREMIUM_FILE, "Tinker VPN Premium");
 });
 
 app.get("/family", (req, res) => {
-  sendFile(res, FAMILY_FILE, "Tinker VPN Family");
+  sendSubscription(res, FAMILY_FILE, "Tinker VPN Family");
+});
+
+// 404
+app.use((req, res) => {
+  res.status(404).send("Not found");
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Tinker VPN server running on port ${PORT}`);
 });
