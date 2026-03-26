@@ -1,12 +1,13 @@
 {
   "name": "tinker-vpn-sub",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Tinker VPN subscription server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.18.2"
   }
 }
