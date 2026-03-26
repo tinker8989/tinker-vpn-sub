@@ -1,1 +1,2 @@
 vless://0c463591-2f7b-424d-98db-89b63a655f64@admin.silentiumroom.shop:443?type=tcp&encryption=none&security=reality&pbk=-3tn3F4XSJUb2wuVc69XemKfQ_YF5lEay9dSrXe96CU&fp=chrome&sni=www.microsoft.com&sid=90d591914148&spx=%2F#admin-Artem
+vless://97d702cf-f2bb-47f2-9449-77d892b7814c@in.snowfall.top:1443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=in.snowfall.top&pbk=-DHBSXn2umG8gbKwtJt408EvhqGnj6WJTJOXdBwrPyc&sid=0441f3e34348cb45&spx=/#%F0%9F%87%AE%F0%9F%87%B3India
