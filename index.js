@@ -41,11 +41,11 @@ function setHeaders(res, title) {
   // Без срока окончания подписки
   res.setHeader(
     "Subscription-Userinfo",
-    "upload=0; download=0; total=1099511627776"
+    "upload=0; download=0; total=0"
   );
   res.setHeader(
     "X-Subscription-Userinfo",
-    "upload=0; download=0; total=1099511627776"
+    "upload=0; download=0; total=0"
   );
 
   // Для части клиентов полезно
