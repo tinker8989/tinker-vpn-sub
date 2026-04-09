@@ -1,2 +1,1 @@
-vless://05dc09d5-5c56-454b-a34e-6ef743d91e1a@germany.boot-lee.ru:8443/?type=tcp&encryption=none&flow=xtls-rprx-
-security=reality&encryption=none&pbk=mjSHzyodABZL0_ZatBYGQ3rEt6FKXB7dBhPAFSxzAXw&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=disk.yandex.ru&sid=12345678#%F0%9F%87%B7%F0%9F%87%BA3+LTE+%E2%80%A2+%D0%92%D1%81%D0%B5+%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B
+
